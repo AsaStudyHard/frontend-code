@@ -1,0 +1,29 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.desc{
+    text-align: center;
+}
+.time {
+    color: #808080;
+}
+
+.company {
+    color: #87ceeb;
+    font-weight: bold;
+}
+
+.fav{
+    text-decoration: none;
+}
+
+.content{
+    /* 首行缩进2字符 */
+    text-indent: 2em;
+}
