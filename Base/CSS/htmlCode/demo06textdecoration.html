@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a {
+            /*使用连写方式：style weight  size/line-height family */
+            font: italic bold 2em/1.5em 宋体;
+            background-color: skyblue;
+        }
+
+        .b {
+            /*使用普通模式*/
+            font-style: italic;
+            font-weight: bold;
+            font-size: 2em;
+            line-height: 1.5em;
+            font-family: "宋体";
+            background: aliceblue;
+        }
+    </style>
+
+</head>
+<body>
+<!--text-decoration-->
+<a href="www.baidu.com" style="text-decoration: none; color: black">百度一下你就知道</a>
+<br>
+
+<!--使用font的连写-->
+<a class="a" href="#">这是一个超链接</a>
+<br>
+<a class="b" href="#">这是另一个超链接</a>
+
+</body>
+</html>
