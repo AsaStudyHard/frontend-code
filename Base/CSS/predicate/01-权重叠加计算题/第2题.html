@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第2题: 标签选择器选择一类</title>
+    <style>
+		/*双标签：(0, 0, 0, 2)*/
+        div div {
+            color: skyblue;
+        }
+		/*单标签：(0, 0, 0, 2)*/
+        div {
+            color: red;
+        }
+	/* 注意这2个选择器对于文本而言都不是继承，因为可以直接选中，天空蓝 */
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            这行文本是什么颜色？
+        </div>
+    </div>
+</div>
+</body>
+</html>

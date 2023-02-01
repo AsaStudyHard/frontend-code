@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第1题：普通题</title>
+    <style>
+        /* (行内, id, 类, 标签) */
+        /* !important 最高 */
+        /* 继承: 最低 */
+        /*
+        father 是id， son是id
+        所以权重集合(0, 2, 0, 0, 0)
+        */
+        #father #son {
+            color: blue;
+        }
+
+        /*
+        p.c2是交集选择器，c2是类, p是标签
+        father是id
+        (0, 1, 1, 0)
+        */
+        #father p.c2 {
+            color: black;
+        }
+        /*
+        p.c2 是交集选择器 p是标签，c2是类
+        div.c1 中c1是类，div是标签
+        (0, 0, 2, 2)
+        */
+        div.c1 p.c2 {
+            color: red;
+        }
+
+        /*
+        (0, 1, 0, 0)
+        */
+        #father {
+            color: green !important;
+        }
+        /*
+        div中father中的c1这个类的标签
+        (0, 1, 1, 1)
+        */
+        div#father.c1 {
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+<div id="father" class="c1">
+    <p id="son" class="c2">
+        这行文本是什么颜色的？
+    </p>
+</div>
+</body>
+</html>
