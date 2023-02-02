@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        Note: padding: 设置 边框 与 内容区域 之间的距离
+        padding的复合属性的值顺序是：顺时针
+        如果缺少了对应位数的值，浏览器直接做对称的取值
+
+        Note: css3中可以自动的进行盒子大小的控制，而不要手动减
+        该语法是css3支持的特性：使用box-sizing: border-box;即可
+        */
+        div {
+            /*这个需求的注意点在于，我们的边框和padding都会撑大盒子*/
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            border: 10px solid black;
+            padding: 20px;
+            box-sizing: border-box;  /*这样我们的width，height就变成了盒子的大小，而不是内容的大小*/
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <!--需求：盒子尺寸300*300，背景粉色，边框10px实线黑色，上下左右20px的内边距-->
+
+
+</div>
+</body>
+</html>
