@@ -23,6 +23,7 @@ body {
 }
 
 .carDesc {
+
     line-height: 30px;
     font-size: 12px;
     background-color: aliceBlue;
@@ -32,4 +33,5 @@ body {
 .carPrice {
     color: #ffa500;
     font-size: 14px;
+    line-height: 1.5em;
 }

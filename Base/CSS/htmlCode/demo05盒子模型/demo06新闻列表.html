@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*完成新闻列表的练习，注意无序列表的处理，以及外边距，内边距的处理*/
+        * {
+            margin: 0;
+            padding: 0;
+            /*固定盒子的大小*/
+            box-sizing: border-box;
+        }
+
+        div.news {
+            /*版心居中*/
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            /*设置内边距的缩放*/
+            padding: 43px 30px 0;
+            /*设置块大小*/
+            width: 500px;
+            height: 400px;
+        }
+
+        div > .newsHead {
+            /*对新闻头进行设置*/
+            /*字体设置*/
+            font-weight: bold;
+            font-size: 30px;
+
+            /*边距设置*/
+            padding-bottom: 9px;
+            border-bottom: 1px solid #cccccc;
+            line-height: 1; /*让这一行content部分和字体一样高*/
+        }
+
+        div > ul > li {
+            /*设置具体的列表项*/
+            /*清除列表序号*/
+            list-style: none;
+            height: 50px;
+            padding-left: 28px;
+            line-height: 50px;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        ul > li > a {
+            color: #666;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        ul > li > a:hover{
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="news">
+    <p class="newsHead">最新文章/New Articles</p>
+    <!--我们看见下面具体的内容的样式都是一样的，所以可以考虑使用列表做-->
+    <ul>
+
+        <li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+    </ul>
+
+</div>
+</body>
+</html>

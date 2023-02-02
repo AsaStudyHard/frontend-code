@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        a,
+        div>span {
+            /* div和a都会被渲染 */
+            color: red;
+        }
+        .but:hover{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 后代选择器的演示 -->
+    <div>
+        这是div
+        <a>内部的p label</a>
+    </div>
+    <div>
+        <span>lll</span>
+    </div>
+    <div>
+        这是div
+        <a>内部的a label</a>
+    </div>
+    <hr>
+
+    <button type="button" class="but">
+        大按钮
+    </button>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻列表</title>
+    <style>
+        /*从外到内，从上到下*/
+
+        /*清除网页中标签自带偏移量*/
+        * {
+            margin: 0;
+            padding: 0;
+            /*固定盒子的尺寸， CSS3提供的功能*/
+            box-sizing: border-box;
+        }
+
+        /*设置外边框大小*/
+        div.news {
+            /*width, height, margin, border, padding, content*/
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid #cccccc;
+            padding: 43px 30px 0;
+            /*content的设置*/
+        }
+
+        /*新闻列表标题的样式控制*/
+        .news > .newsHead {
+            /*width, height, margin, border, padding, content*/
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 7px;
+
+            /*content setting*/
+            font-size: 31px;
+            font-weight: bold;
+        }
+
+        .news > ul > li {
+            list-style: none;
+            /*width, height, margin, border, padding, content*/
+            height: 50px;
+            border-bottom: 1px dashed #ccc;
+            padding-left: 27px;
+            line-height: 50px;
+            /*padding: 16px 0 12px 27px;*/
+
+        }
+
+        /*新闻的具体项样式的控制*/
+        .news > ul > li > a {
+            text-decoration: none;
+            /*width, height, margin, border, padding, content*/
+            /*content setting*/
+            font-size: 21px;
+            color: #666666;
+            line-height: 1;
+        }
+
+        .news > ul > li > a:hover {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+<div class="news">
+    <p class="newsHead">最新文章/New Articles</p>
+    <ul>
+        <li class="newsItem"><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li class="newsItem"><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li class="newsItem"><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li class="newsItem"><a href="#">北京招聘网页设计，平面设计，php</a></li>
+        <li class="newsItem"><a href="#">北京招聘网页设计，平面设计，php</a></li>
+    </ul>
+</div>
+</body>
+</html>

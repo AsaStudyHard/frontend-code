@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        Note: 有时我们会发现很多的标签，自带了一些边框的设置，为了是页面更加的规整，通常会手动设置这些标签的边距
+        例如，多级标题，列表。
+        所以我们会使用如下的代码
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+        Note: 在常见的web布局中，我们的内容都是放在页面中央的，这种布局经常被使用，我们称之为版心居中
+        使用如下的代码
+        */
+        div.a {
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<p>清除默认边距</p>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<hr>
+<ul>
+    <li>lili</li>
+    <li>lili</li>
+    <li>lili</li>
+</ul>
+
+<hr>
+<!--版心居中
+  margin: 0 auto;
+-->
+<div class="a" style="width:100px; height: 200px; background-color:aliceblue;">
+    版心居中
+</div>
+</body>
+</html>

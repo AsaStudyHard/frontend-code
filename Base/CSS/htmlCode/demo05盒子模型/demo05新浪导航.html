@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .head {
+            margin-top: 8px;
+            /*先搞外边的宽高，然后是边框和编剧*/
+            height: 40px;
+            border-top: 3px solid #ffa500;
+            border-bottom: 1px solid #edeef0;
+        }
+
+        div a {
+            /*控制边框以及背景的样式*/
+            display: inline-block;
+
+            /*使用了width会存在一个问题，就是文字太多，超过这个像素，会自动换行，这是我们不希望看见的*/
+            /*width: 80px;*/
+
+            /*所以我们使用padding进行左右边距的控制，而不进行自动换行*/
+            padding: 0 20px;
+            background-color: #edeef0;
+            text-align: center;
+            line-height: 40px;
+
+            /*控制文字装饰*/
+            text-decoration: none;
+            color: #4c4c4c;
+            font-size: 12px;
+        }
+
+        a:hover {
+            /*控制鼠标悬浮文字装饰*/
+            color: #ffa500;
+            font-weight: bold;
+
+        }
+    </style>
+
+</head>
+<body>
+<!--项目开发的样式流程：从外到内，从上到下-->
+<!--1. 控制div样式-->
+<div class="head">
+    <!--2. 控制内容的样式
+        文字 4c4c4c, 大小可以直接量高度
+
+    -->
+    <a href="#">新浪导航</a>
+    <a href="#">新浪导航</a>
+    <a href="#">新浪导航</a>
+    <a href="#">新浪导航</a>
+</div>
+</body>
+</html>
