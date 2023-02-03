@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 浮动存在的问题，可以参看 ../../image/浮动存在的问题.png 图片
+    现在我们来说解决方案：
+        方式一：在父元素内容的最后添加一个块级元素； 给添加的块级元素设置 clear:both；这种方式会让标签结构变得复杂，不推荐
+        方式二：通过伪元素实现新增元素，从而清除父级浮动影响
+        方式三：也是通过伪元素进行控制，他更加的完善，可以清除父级受到的外边距塌陷
+        方式四：通过overflow: hidden清除浮动影响，前面我们的外边距塌陷也通过这个属性解决过
+    -->
+    <style>
+        .top {
+            /*没有设置盒子大小，则与之同级的元素往上顶*/
+            margin: 0 auto;
+            width: 1000px;
+            background-color: pink;
+            /*方式四*/
+            overflow: hidden;
+        }
+        /*方式一, 通过新增元素的clear: both进行控制*/
+        /*.add{*/
+        /*    !*给新增的元素设置clear属性*!*/
+        /*    clear: both;*/
+        /*}*/
+
+        /*方式二： 通过对父级的伪元素的控制，实现清除浮动的效果, 一般这种效果我们会单独写一个样式控制，然后标签直接引入这个样式就好了*/
+        /*.clearfix::after{*/
+        /*    content: '';*/
+        /*    display: block;*/
+        /*    clear: both;*/
+        /*    !*过去有些旧版的浏览器会对伪元素解析不完美，从而多一些空白，为了兼容，可以加上如下的代码，消除伪元素的显示*!*/
+        /*    height: 0;*/
+        /*    visibility: hidden;*/
+        /*}*/
+
+        /*  .clearfix::before 作用: 解决外边距塌陷问题
+            外边距塌陷: 父子标签, 都是块级, 子级加margin会影响父级的位置，例如子级加margin-top，会带着父级一起降落
+        */
+        /* 清除浮动，注意看这是2个伪元素 */
+        /*.clearfix::before,*/
+        /*.clearfix::after {*/
+        /*    content: '';*/
+        /*    display: table;*/
+        /*}*/
+
+        /*!* 真正清除浮动的标签，这里的after也是上面的那个，二者效果最终会合并 *!*/
+        /*.clearfix::after {*/
+        /*    !* content: '';*/
+        /*    display: table; *!*/
+        /*    clear: both;*/
+        /*}*/
+        .bottom {
+            height: 100px;
+            background-color: green;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: #ccc;
+        }
+
+        .right {
+            float: right;
+            width: 790px;
+            height: 300px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!-- 父子级标签, 子级浮动, 父级没有高度, 后面的标准流盒子会受影响, 显示到上面的位置 -->
+<!--通过clearfix消除父级元素收到的浮动影响-->
+<div class="top clearfix">
+    <div class="left"></div>
+    <div class="right"></div>
+    <!--给父级元素添加一个块标签-->
+<!--    <div class="add"></div>-->
+</div>
+<div class="bottom"></div>
+</body>
+</html>

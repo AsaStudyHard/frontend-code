@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 0 auto;
+        }
+
+        div.header {
+            height: 40px;
+            background-color: #333333;
+        }
+
+        div.nav {
+            width: 1226px;
+            height: 100px;
+            background-color: #ffc0cb;
+        }
+
+        div.center {
+            width: 1226px;
+            height: 460px;
+        }
+
+        /*使用浮动的这2块元素的margin 0 auto居中失效，但是他们的父类是居中的，所以他们也居中*/
+        .center > .center-left {
+            float: left;
+            width: 234px;
+            height: 460px;
+            background-color: #ffa500;
+        }
+
+        .center > .center-body {
+            float: left;
+            width: 992px;
+            height: 460px;
+            background-color: #87ceeb;
+        }
+    </style>
+
+</head>
+<body>
+<div class="header"></div>
+<div class="nav"></div>
+<div class="center">
+    <div class="center-left"></div>
+    <div class="center-body"></div>
+</div>
+</body>
+</html>

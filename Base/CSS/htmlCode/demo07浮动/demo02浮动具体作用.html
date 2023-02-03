@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 浮动是使得当前这个元素脱离其父元素的空间限制，这种现象我们称之为 脱标。
+    注意：浮动后的标签具备行内块特点
+        浮动后的元素不能通过text-align:center或者margin:0 auto，设置其居中
+        浮动的元素如果大小超过父类，也会自动换行，即使合并的高度超过父类
+    -->
+    <style>
+        .father {
+            height: 400px;
+            background-color: skyblue;
+        }
+
+        /*使用浮动效果*/
+        .a {
+            float: left;
+            width: 80px;
+            height: 50px;
+            background-color: blanchedalmond;
+        }
+
+        .b {
+            float: left;
+            width: 80px;
+            height: 50px;
+            background-color: yellowgreen;;
+        }
+
+        .father2 {
+            width: 500px;
+            height: 80px;
+            background-color: skyblue;
+        }
+        .a2 {
+            float: left;
+            width: 300px;
+            height: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .b2 {
+            float: left;
+            width: 250px;  /*2个子标签的宽度大于父类的，所以自动换行了*/
+            height: 100px;
+            background-color: yellowgreen;;
+        }
+    </style>
+
+</head>
+<body>
+<div class="father">father
+    <div class="a">aaa</div>
+    <div class="b">bbb</div>
+</div>
+
+<hr>
+
+<div class="father2">father
+    <div class="a2">aaa</div>
+    <div class="b2">bbb</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 在设置浮动的时候，注意父类标签的盒子大小；
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.center {
+            margin: 50px auto;
+            width: 1226px;
+            height: 614px;
+            background-color: aliceblue;
+        }
+
+        .center > .center-left {
+            float: left;
+
+            width: 234px;
+            height: 614px;
+            background-color: #800080;
+        }
+
+        .center-list {
+            float: left;
+            width: 992px;
+            height: 614px;
+        }
+
+        /*取出列表序号*/
+        ul {
+            list-style: none;
+        }
+
+        .center-list > ul > li {
+            float: left;
+            width: 234px;
+            height: 300px;
+            background-color: #87ceeb;
+        }
+
+        .center-list li:nth-child(odd) {
+            margin: 0 14px 14px 14px; /*选中奇数的li, 进行margin的控制*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="center">
+    <div class="center-left"></div>
+    <div class="center-list">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

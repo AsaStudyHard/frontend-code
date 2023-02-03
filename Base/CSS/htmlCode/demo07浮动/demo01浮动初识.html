@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 我们知道块级元素默认占据一行，如果我们希望布局中一行有多个部分
+    方式一：将block展示效果转为 inlink-block, 但使用这种效果，需要将几个标签放在同一行中，否则换行会被浏览器解析出一个空格
+    方式二：使用浮动进行展示
+    语法：float: left/center/right
+    -->
+    <style>
+        /*使用修改展示等级的方式进行展示*/
+        .a {
+            width: 200px;
+            height: 100px;
+            background-color: deepskyblue;
+            display: inline-block;
+        }
+
+        .b {
+            width: 200px;
+            height: 100px;
+            background-color: cornflowerblue;
+            display: inline-block;
+        }
+
+        /*使用浮动，改变界面的布局*/
+        .c {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: deepskyblue;
+        }
+
+        .d {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+<!--为了去除块之间的空格，将2个div标签放在一行-->
+<div class="a">aaa</div><div class="b">bbb</div>
+<hr>
+<div class="c">ccc</div>
+<div class="d">ddd</div>
+</body>
+</html>
