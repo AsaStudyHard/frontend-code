@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 结构伪类选择器也可以使用复合选择器的规则
+    -->
+
+    <style>
+        /*选中第一个li中的所有的a标签*/
+        li:first-child a {
+            text-decoration: none;
+            color: deepskyblue;
+        }
+
+        /*选中第一个li中第一个a标签*/
+        li:first-child > a:first-child {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+<ul>
+    <li>
+        <a href="#">1</a>
+        <a href="#">11</a>
+        <a href="#">111</a>
+    </li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+</ul>
+</body>
+</html>

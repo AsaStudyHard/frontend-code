@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    Note: 结构伪类选择器，可以通过一些简单的公式，通过发现标签的结构选中我们想要控制的标签
+    语法： 标签名:first-child(公式) {...}；或标签名:nth-child() {...}；
+    通常有如下的几种方式
+    -->
+    <style>
+        /*直接选中第一个，公式可以省略*/
+        li:first-child {
+            background-color: deepskyblue;
+        }
+
+        /*选中最后一个*/
+        li:last-child {
+            background: deepskyblue;
+        }
+
+        /*选中第三个*/
+        li:nth-child(3) {
+            background-color: cadetblue;
+        }
+
+        /*选中4的倍数, 代数必须是n*/
+        li:nth-child(4n) {
+            background-color: cornflowerblue;
+        }
+
+        /*选中前五个，不常用*/
+        li:nth-child(-n+5) {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        /*选中奇数*/
+        li:nth-child(odd) {
+            font-size: 20px;
+        }
+
+        /*选中偶数*/
+        li:nth-child(even) {
+            font-size: 50px
+        }
+    </style>
+
+
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+
+
+</body>
+</html>

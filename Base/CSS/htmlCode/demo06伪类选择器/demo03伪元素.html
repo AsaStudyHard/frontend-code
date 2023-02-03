@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+Note: 所谓的伪元素（pseudo element），就是假的标签，通过css提供的属性从而实现类似html标签的效果
+需要找到文本的父元素，伪元素相当于在父元素中创建子元素
+css给我们提供了2个伪元素
+::before
+::after
+需要注意的是，使用伪元素必须要有content属性；可以直接将他们当成标签使用，所以也可以对伪元素进行样式控制
+
+使用方式见下：
+-->
+<style>
+    /*before表示在这个标签之前，after在其之后
+    之 的父级标签并不是div, 而是span
+    */
+    div.parent::before {
+        content: "鸟";
+        /*进行样式控制*/
+        background-color: deepskyblue;
+    }
+
+    div.parent::after {
+        content: "诗";
+        /*进行样式控制*/
+        background-color: deepskyblue;
+    }
+
+    span.child::before{
+        content: "鸟";
+        /*进行样式控制*/
+        background-color: cornflowerblue;
+    }
+    span.child::after{
+        content: "诗";
+        /*进行样式控制*/
+        background-color: cornflowerblue;
+    }
+
+    /*伪元素不仅可以使用文字，还可以使用图片之类的*/
+    div.parent1::before {
+        content:url("../../datas/car.jpg");  /*使用url设置图片*/
+        display: inline-block;
+        /*进行背景图片的设置*/
+        background-size: 100% 100%;
+    }
+
+</style>
+
+
+<body>
+
+<div class="parent">
+    <span class="child">之</span>
+</div>
+
+<div class="parent1">
+    <span class="child1">之</span>
+</div>
+</body>
+</html>
