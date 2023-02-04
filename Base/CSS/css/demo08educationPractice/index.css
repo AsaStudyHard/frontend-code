@@ -1,0 +1,303 @@
+/*在实际开发中，我们会发现很多的标签的样式处理是类似的，所以我们会将这些样式拷贝，也就是我们称的项目准备*/
+/*去除所有标签的默认边距*/
+* {
+    margin: 0;
+    padding: 0;
+    /*使用内减模式*/
+    box-sizing: border-box;
+}
+
+/*去除所有的li的序号*/
+li {
+    list-style: none;
+}
+
+/*去除所有超链接的下划线*/
+a {
+    text-decoration: none;
+}
+
+/*去除所有父级标签收到的浮动影响已经外边距塌陷问题*/
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+/*清除浮动影响*/
+.clearfix::after {
+    clear: both;
+}
+
+/*body的背景颜色的控制*/
+body {
+    background-color: #f3f5f7;
+}
+
+.wrapper {
+    /*版心模块样式控制*/
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/*头部板块样式控制*/
+.header {
+    /*设置盒子大小; 可以看见网站的logo图片高度是42px,所以设置为42px*/
+    height: 42px;
+    /*设置边距*/
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*background-color: green;*/
+}
+
+/*设置logo的样式*/
+.header .logo {
+    float: left;
+    margin-right: 70px;
+}
+
+/*导航栏的盒子的设置, 一般这种纯文字的布局，他的盒子不用限制宽度，设置高度即可，
+而高度可以直接和logo保持一致, 然后设置我们的内容行高，使其垂直居中*/
+.header .nav {
+    float: left;
+    height: 42px;
+
+}
+
+/*导航栏的具体项的样式控制*/
+.header .nav li {
+    /*因为line-height是针对文字的设置，所以会被子类继承，所以li中的超链接的文字也是垂直居中*/
+    float: left;
+}
+
+/*文字控制*/
+.nav li a {
+    display: block; /*这里之所以可以设置为block, 是因为父标签li限制了a的大小*/
+    height: 42px;
+    padding: 0 9px;
+    color: #050505;
+    font-size: 18px;
+    line-height: 42px;
+}
+
+/*添加选中效果*/
+.nav li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+/*搜索框的面板样式控制*/
+.header .search {
+    float: left;
+    height: 42px;
+    width: 412px;
+    margin-left: 85px;
+}
+
+/*搜索框样式控制*/
+.header .search input {
+    float: left;
+    margin: 1px 0;
+    height: 40px;
+    width: 360px;
+    border: 1px solid #00a4ff;
+    border-radius: 2px;
+    padding-left: 14px;
+}
+
+/*设置搜索框中的placeholder的样式*/
+.header .search input::placeholder {
+    color: grey;
+    font-size: 13px;
+}
+
+/*选中输入框的样式*/
+/*.header .search input:focus {*/
+/*    outline: none;*/
+/*    border: 3px solid #00a4ff;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/*搜索的提交按钮样式*/
+.header .search .bnt {
+    float: left;
+    width: 50px;
+    height: 40px;
+    border: 0;
+    background-image: url("../../html/demo08educationPractice/images/btn.png");
+    margin: 1px 0;
+}
+
+/*.header .search .bnt:hover {*/
+/*    background-image: url("../../html/demo08educationPractice/images/user.png");*/
+/*}*/
+
+/*用户登录展示*/
+.header > .user {
+    float: left;
+    margin-left: 31px;
+    height: 42px;
+    line-height: 42px;
+}
+
+.header > .user > img {
+    vertical-align: middle;
+}
+
+.header > .user > .username {
+    color: #666666;
+    font-size: 14px;
+}
+
+/*设置轮播图的背景*/
+div.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+/*轮播图*/
+.banner .wrapper {
+    /*注意，设置块高度，因为wrapper已经设置过了宽度，如果不设置高度，就是默认高度为0，则标签不存在*/
+    height: 420px;
+    background-image: url("../../html/demo08educationPractice/images/banner2.png");
+}
+
+/*左边的课程目录*/
+.banner .left {
+    float: left;
+    width: 190px;
+    height: 420px;
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    /*这种，每一行都有间距的，我们可以直接使用行高进行控制, 当然使用margin和padding也没有问题，但是会很麻烦*/
+    line-height: 44px;
+}
+
+.banner .left a {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.banner .left span {
+    float: right;
+}
+
+.banner .left a:hover {
+    color: #00b4ff;
+}
+
+/*用户的课程列表区域*/
+.banner .right {
+    float: right;
+    width: 228px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+/*用户课程表的标头*/
+.banner .wrapper .right h2 {
+    height: 48px;
+    background-color: #9bceea;
+    line-height: 48px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+/*用户课程表*/
+.banner .right .content {
+    /*
+    上边距到文字的距离是19px, 但是文字本身还会被浏览器赋予行高，所以先设置小点，然后尽心微调
+    每一行的具体内容的都有自己的宽高，所以直接在行中设置padding，在这里就不设置上高了
+    */
+    margin: 0 18px;
+}
+
+/*具体的内容样式*/
+.banner .right .content dl {
+    padding: 18px 0 8px;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.banner .right .content dt {
+    font-size: 16px;
+    color: #212121;
+}
+
+.banner .right .content span {
+    font-size: 13px;
+    color: #4e4e4e;
+}
+
+.banner .right .content dd {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+/*更多的外部*/
+.banner .right .more {
+    margin: 4px 14px 0;
+}
+
+.banner .right .more a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    border: solid 1px #00a4ff;
+    /*字体*/
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: bold;
+
+    text-align: center;
+    line-height: 40px;
+}
+
+/*修改goods的板块*/
+div.goods {
+    height: 60px;
+    background-color: white;
+    margin-top: 8px;
+    /*padding: 21px 26px 21px 34px;*/
+    padding-left: 34px;
+    padding-right: 26px;
+    /*阴影效果*/
+    box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+    /*让所有的文字垂直居中*/
+    line-height: 60px;
+}
+
+/*让元素浮动*/
+.goods h2 {
+    float: left;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.goods ul {
+    float: left;
+    margin-left: 33px;
+}
+
+.goods ul li {
+    /*
+    Note: 这里li是块级元素，我们没设置行高的情况下，默认和父级的高相同，所以边框线加载a标签上
+    因为a标签的高和文字相同
+    */
+    float: left;
+}
+
+.goods ul .goodsItem {
+    padding-left: 35px;
+    padding-right: 35px;
+    border-left: 1px solid #bfbfbf;
+}
+
+.goods .updateHobby {
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+

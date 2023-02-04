@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学成在线</title>
+    <!--
+    Note: 在项目上线到服务时，要求我们的命名全为英文。
+    一般css文件名和html文件名保持一致，方便区分
+    -->
+    <link rel="stylesheet" href="../../css/demo08educationPractice/index.css">
+</head>
+<body>
+<!--
+Note: 在正式的布局之前，有几个注意事项
+1. 网站的css样式书写书序是 浮动， display, 盒子模型， 文字
+2. 布局从外到内，从上到下，从左到右
+3. 对于页面的一些区域，我们有一些专用的名词去指定
+    header: 头部样式
+    wrapper: 版心
+-->
+
+<!--首先头部板块，可以他处于版心，有属于头部，所以使用2个类样式进行控制-->
+<div class="header wrapper">
+    <!--使用层次分明的标题，对于无障碍是一种很友好的行为，logo对于网站很重要，所以置为h1-->
+    <h1 class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="学成在线"/></a>
+    </h1>
+
+    <!--页面导航栏-->
+    <div class="nav">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">职业规划</a></li>
+        </ul>
+    </div>
+
+    <!--搜索栏-->
+    <div class="search">
+        <!--        <form action="#" method="post">-->
+        <!--            <label>-->
+        <input type="text" placeholder="输入关键词"/>
+        <!--            </label>-->
+        <button type="button" class="bnt"></button>
+        <!--        </form>-->
+    </div>
+
+    <!--用户登录-->
+    <div class="user">
+        <!--img 和 span 都不是block元素，所以可以不设置浮动-->
+        <img src="images/user.png" alt="图片丢失">
+        <!--这里可以不用给定宽度，防止用户名过长，如果太长，我们可以限定用户名字数-->
+        <span class="username">Mr. lilei</span>
+    </div>
+</div>
+
+<!--轮播图区域-->
+<!--首先有一个大大的背景，这可以看成一个块，这个块独占一行，所以不能使用wrapper样式-->
+<div class="banner">
+    <div class="wrapper">
+        <!--这里是我们的版心区域，直接设置一张背景图，后期可以使用js实现轮播图的效果-->
+        <div class="left">
+            <ul>
+                <li><a href="#">前端开发<span>></span></a></li>
+                <li><a href="#">后端开发<span>></span></a></li>
+                <li><a href="#">移动开发<span>></span></a></li>
+                <li><a href="#">人工智能<span>></span></a></li>
+                <li><a href="#">商业预测<span>></span></a></li>
+                <li><a href="#">云计算&大数据<span>></span></a></li>
+                <li><a href="#">运维&从测试<span>></span></a></li>
+                <li><a href="#">UI设计<span>></span></a></li>
+                <li><a href="#">产品<span>></span></a></li>
+            </ul>
+        </div>
+
+        <!--右边用户的课程区域-->
+        <div class="right">
+            <h2>我的课程表</h2>
+            <div class="content">
+                <dl>
+                    <dt>
+                        继续学习
+                        <span>程序语言设计</span>
+                    </dt>
+                    <dd>正在学习-使用对象</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        继续学习
+                        <span>程序语言设计</span>
+                    </dt>
+                    <dd>正在学习-使用对象</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        继续学习
+                        <span>程序语言设计</span>
+                    </dt>
+                    <dd>正在学习-使用对象</dd>
+                </dl>
+            </div>
+            <div class="more"><a href="#">全部课程</a></div>
+
+        </div>
+    </div>
+</div>
+
+<div class="goods wrapper">
+    <!--h2, li都是块级元素，需要进行浮动-->
+    <h2>精品推荐</h2>
+    <ul>
+        <li><a href="#" class="goodsItem">JQuery</a></li>
+        <li><a href="#" class="goodsItem">JQuery</a></li>
+        <li><a href="#" class="goodsItem">JQuery</a></li>
+        <li><a href="#" class="goodsItem">JQuery</a></li>
+        <li><a href="#" class="goodsItem">JQuery</a></li>
+    </ul>
+    <a href="#" class="updateHobby">修改兴趣</a>
+</div>
+
+</body>
+</html>
