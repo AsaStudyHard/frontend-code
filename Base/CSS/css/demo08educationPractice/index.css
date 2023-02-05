@@ -17,7 +17,11 @@ a {
     text-decoration: none;
 }
 
-/*去除所有父级标签收到的浮动影响已经外边距塌陷问题*/
+/*去除所有父级标签受到的浮动影响，以及外边距塌陷问题：
+所谓的外边距塌陷，就是父级标签随着子级标签的margin-top一起下降
+我们并不需要这种现象，我们希望的是子级标签以父级的边框作为基准，从而产生距离
+当然，有时我们也会使用内标签的padding-top实现类似的效果
+*/
 .clearfix::before,
 .clearfix::after {
     content: '';
@@ -96,6 +100,8 @@ body {
 /*搜索框样式控制*/
 .header .search input {
     float: left;
+    /*为了让输入框居中，使用margin进行控制，使用行高是不行的，因为input不是文字*/
+    /*line-height: 42px;*/
     margin: 1px 0;
     height: 40px;
     width: 360px;
@@ -140,6 +146,7 @@ body {
 }
 
 .header > .user > img {
+    /*为了让图片垂直居中，使用如下的属性，当然，我们使用margin也是可以实现类似的效果*/
     vertical-align: middle;
 }
 
@@ -194,7 +201,7 @@ div.banner {
     background-color: #fff;
 }
 
-/*用户课程表的标头*/
+/*用户课程表的头部*/
 .banner .wrapper .right h2 {
     height: 48px;
     background-color: #9bceea;
@@ -240,10 +247,11 @@ div.banner {
 }
 
 .banner .right .more a {
+    /*之所以将a标签作为块标签，而不是在a标签外部进行画线，是为了用户可以有更多的点击空间*/
     display: block;
     width: 200px;
     height: 40px;
-    border: solid 1px #00a4ff;
+    border: 1px solid #00a4ff;
     /*字体*/
     font-size: 16px;
     color: #00a4ff;
@@ -261,9 +269,9 @@ div.goods {
     /*padding: 21px 26px 21px 34px;*/
     padding-left: 34px;
     padding-right: 26px;
-    /*阴影效果*/
+    /*阴影效果, 后面会学习*/
     box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
-    /*让所有的文字垂直居中*/
+    /*让所有的文字垂直居中, 因为line-height是作用于文字的，所以可以直接继承*/
     line-height: 60px;
 }
 
@@ -292,6 +300,13 @@ div.goods {
     padding-left: 35px;
     padding-right: 35px;
     border-left: 1px solid #bfbfbf;
+    font-size: 15px;
+    color: #4b4b4b;
+}
+
+.goods ul .goodsItem:hover {
+    font-weight: bold;
+    color: black;
 }
 
 .goods .updateHobby {
