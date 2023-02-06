@@ -270,7 +270,7 @@ div.goods {
     padding-left: 34px;
     padding-right: 26px;
     /*阴影效果, 后面会学习*/
-    box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+    box-shadow: 0 2px 3px 0 rgba(118, 118, 118, 0.2);
     /*让所有的文字垂直居中, 因为line-height是作用于文字的，所以可以直接继承*/
     line-height: 60px;
 }
@@ -315,4 +315,127 @@ div.goods {
     color: #00a4ff;
 }
 
+.box {
+    margin-top: 35px;
+}
 
+.box .title {
+    height: 40px;
+}
+
+.box .title h2 {
+    float: left;
+    font-weight: normal;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box .title a {
+    float: right;
+    margin-top: 8px;
+    margin-right: 35px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.box .title a:hover {
+    font-weight: bold;
+    color: black;
+}
+
+/*设置推荐的课程的面板大小*/
+.box .content li {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 228px;
+    height: 270px;
+    background-color: white;
+}
+
+.box .content li:nth-child(5n) {
+    margin-right: 0;
+}
+
+/*设置课程的文字大小*/
+.box .content li h3 {
+    margin: 20px 20px 16px 24px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #050505;
+}
+
+.box .content li p {
+    margin: 0 23px;
+    color: #999999;
+    font-size: 12px;
+}
+
+.box .content li span {
+    color: #ff7c2d;
+}
+
+/*footer内容样式控制*/
+.footerBoard {
+    /*
+    一个通栏的白色背景显示, 发现背景板到上面去了，这是出现了浮动脱标效果。
+    因为我们上面的 box的content没有设置height, 在浏览器看来，这就是没有元素
+    所以我们需要给content加上浮动清除
+    */
+    height: 417px;
+    /*注意这里不推荐设置我们的左右边距，因为我们的具体内容已经是在版心中了
+    所以我们可以在content中设置元素的margin*/
+    padding: 30px 0;
+    background-color: white;
+}
+
+.footerBoard .footerContent .left {
+    float: left;
+    margin-left: 21px;
+}
+
+.footerBoard .footerContent .left p {
+    /*对于这种文字而言， 一般不设置他的宽度，让其自己撑大布局即可
+    与之前类似，考虑到浏览器和pxcook对文字的行高的解析区别，设置
+    上边距的时候保留一点点像素，用于微调*/
+    margin-top: 22px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.footerBoard .footerContent .left a {
+    display: block;
+    width: 120px;
+    height: 36px;
+    margin-top: 15px;
+    border: 1px solid #00a4ff;
+    /*设置文字属性*/
+    line-height: 36px;
+    color: #00a4ff;
+    text-align: center;
+}
+
+.footerBoard .footerContent .left a:hover {
+    background-color: aliceblue;
+}
+
+.footerBoard .footerContent .right {
+    float: right;
+    margin-right: 30px;
+}
+
+.footerContent .right dl {
+    float: left;
+    margin-left: 120px;
+}
+
+.footerContent .right dt {
+    margin-bottom: 12px;
+    color: #333333;
+}
+
+.footerContent .right a {
+    font-size: 12px;
+    color: #333333;
+}
